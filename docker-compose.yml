@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  db:
+    build:
+     context: .
+     dockerfile: Dockerfile
+    image: sqlserver
+    ports:
+    - "1433:1433"
+    environment:
+      DATABASE_NAME: "mydb"
+      ACCEPT_EULA : "Y"
+      MSSQL_PID   : "Developer"
+      SA_PASSWORD : "yourStrong(!)Password"
+
